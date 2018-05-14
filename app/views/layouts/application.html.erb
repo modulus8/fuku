@@ -1,13 +1,55 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Fuku</title>
-    <%= csrf_meta_tags %>
+<head>
+  <%- if Rails.env == "production"%>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-108053059-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'UA-108053059-1');
+    </script>
+  <%- end%>
+  <title><%= @title.present? ? "#{@title}|e-住まいる(有)福伸商事" : "e-住まいる(有)福伸商事"%></title>
+  <%= csrf_meta_tags %>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  <meta charset="UTF-8">
+  <meta name="keyword" content="金町,水元,福伸商事,東京理科大学,賃貸">
+  <meta name="description" content="e-住まいる(有)福伸商事のウェブサイト。東京都葛飾区(金町・水元）周辺の賃貸・不動産・アパート・マンションなど気軽にご相談下さい。">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, user-scalable=no">
+  <link rel="icon" href="icon.png">
+  <!--<link href="favicon.ico" rel="shortcut icon" />-->
+  <!--<link href="apple-touch-icon.png" rel="apple-touch-icon" >-->
+</head>
 
-    <%= stylesheet_link_tag    'application', media: 'all' %>
-  </head>
-
-  <body>
-    <%= yield %>
-  </body>
+<body background="background.gif">
+<header class="mx-auto my-0 fixed-top box-shadow-top bg-white">
+  <nav class="navbar navbar-expand-lg p-0 m-0">
+    <ul class="nav nav-pills w-100 text-center clearfix">
+      <li class="nav-item float-left w-75 text-left">
+        <a class="navbar-brand pl-2 pb-0" href="/">
+          <img class="logo" src="/logo.png" alt="e-住まいる(有)福伸商事">
+        </a>
+      </li>
+      <li class="nav-item float-right w-25">
+        <a href="/contact" target="_blank">
+          <div class="w-100 h-100 text-main text-center font-small py-2">
+            <i class="fa fa-envelope fa-fw"></i>
+            <span class="font-weight-bold align-middle">お問合せ</span>
+          </div>
+        </a>
+      </li>
+      <li class="nav-item d-inline-block w-25 py-1"><a class="w-100 d-inline-block" href="https://www.athome.co.jp/list/estate/buk/ks/612698" target="_blank"><small class="font-weight-bold text-warm">物件</small></a></li>
+      <li class="nav-item d-inline-block w-25 py-1"><a class="w-100 d-inline-block border-left" href="/parking"><small class="font-weight-bold text-warm">駐車場</small></a></li>
+      <li class="nav-item d-inline-block w-25 py-1"><a class="w-100 d-inline-block border-left" href="/download"><small class="font-weight-bold text-warm">申込書</small></a></li>
+      <li class="nav-item d-inline-block w-25 py-1"><a class="w-100 d-inline-block border-left" href="/company"><small class="font-weight-bold text-warm">会社概要</small></a></li>
+    </ul>
+  </nav>
+</header>
+<main class="main-top-pad">
+  <%= yield %>
+</main>
+</body>
 </html>
