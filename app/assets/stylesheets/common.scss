@@ -1,9 +1,11 @@
 
+//PC画面を作成するまで全体を拡小
 html, body{
-  width: 100%;
+  width: 50%;
   height: 100%;
-  margin: 0;
+  margin: 0 auto;
 }
+header{width: 25%;}
 
 
 a{
@@ -57,7 +59,7 @@ a{
 
 .text-main-shadow{text-shadow: 2px 3px 5px #b5a5a5;}
 
-.main-top-pad{padding-top: 60px;}
+.main-top-pad{padding-top: 85px;}
 
 .click_track_js:active{
   opacity: 0.8;
@@ -114,7 +116,7 @@ nav.pagination{
   }
 }
 
-.line-height{line-height: 150%;}
+.line-height{line-height: 200%;}
 .text-indent{text-indent: 1em;}
 
 .img-cafe{
@@ -132,4 +134,36 @@ nav.pagination{
           black 1px -2px, black -1px -2px,
           black 2px 1px,  black -2px 1px,
           black 2px -1px, black -2px -1px;
+}
+
+.text-warm{
+  color: #524f4a;
+}
+
+.border-left{
+  border-left: 1px solid #524f4a;
+}
+
+.h2_border{border-bottom:3px solid #3E71A8;}
+.font-small{font-size: 0.75em;}
+
+.logo{
+  width: 100%;
+}
+
+.icatch{
+  padding-top: 35%;
+  background-position: center;
+  background-size: cover;
+}
+
+em{
+  color: #5F43FF;
+  text-shadow: 2px 2px 1px #F2DA01;
+}
+
+.university{
+  padding-top: 40%;
+  background-position: center;
+  background-size: cover;
 }

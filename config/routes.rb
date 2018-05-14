@@ -5,5 +5,8 @@ Rails.application.routes.draw do
   root to: 'welcome#index'
 
   get 'company' => 'welcome#company'
+  get 'parking' => 'welcome#parking'
+  get 'rikadai' => 'welcome#rikadai'
+  get 'download' => 'welcome#download'
 
 end
