@@ -62,8 +62,8 @@
         label.form-check-label for="inquiry_sex_woman"
           | 女
 
-    .row.font-small.bg-white.mx-0.form-group.py-2.mb-0.border-bottom
-      .col-2.font-weight-bold
+    .row.bg-white.mx-0.form-group.py-2.mb-0.border-bottom
+      .col-2.font-weight-bold.font-small
         | お問合せ内容
       .col-10.text-left
         p.mb-1
@@ -93,7 +93,7 @@
       .col-2.font-weight-bold
         | 内容
       .col-10
-        - placeholder = "内覧希望の日時や、質問などをご入力ください。（任意)\n \n第一希望：◯月◯日　◯◯：◯◯〜 \n第二希望：◯月◯日　◯◯：◯◯〜"
+        - placeholder = "内覧希望の日時や、質問などをご入力ください。(任意)\n \n第一希望：◯月◯日　◯◯：◯◯〜 \n第二希望：◯月◯日　◯◯：◯◯〜"
         = text_area_tag 'inquiry[text]', '', :class => "form-control", :placeholder => placeholder, :maxlength => 600, :size => "20x10"
 
     .row.border-bottom.font-small.bg-white.mx-0.py-2
@@ -103,9 +103,9 @@
           br
           | ※ 業者配信メールまたは営業関連のお問い合わせはご遠慮ください。
 
-    .row.font-small.bg-white.mx-0.form-group.py-2.mb-0.border-bottom
+    .row.bg-white.mx-0.form-group.py-2.mb-0.border-bottom
       .col
-        button.btn.btn-primary type="submit"
+        button.btn.btn-primary.px-5.py-2 type="submit"
           | 送信
 
 
