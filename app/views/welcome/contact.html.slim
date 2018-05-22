@@ -1,0 +1,111 @@
+.container.text-center.pb-4
+  .row
+    .col
+      h2.h6.bg-primary.text-white.h2_border.mb-0.py-1
+        | お問い合わせ
+
+  .row.border-bottom.font-small.bg-white.mx-0
+    .col
+      | ※
+      span.text-danger
+        | 赤字
+      | 項目は入力必須です。
+
+  = form_tag('/send_inquiry', :method => 'post')
+    .row.font-small.bg-white.mx-0.form-group.py-2.mb-0.border-bottom
+      .col-2.font-weight-bold.text-danger
+        | お名前
+      .col-5
+        lable for="inquiry_sei"
+          | 姓
+        = text_field :inquiry, :sei, :class => "form-control", :placeholder => "福伸", :maxlength => 10, required: true
+      .col-5
+        lable for="inquiry_mei"
+          | 名
+        = text_field :inquiry, :mei, :class => "form-control", :placeholder => "太郎", :maxlength => 10, required: true
+
+    .row.font-small.bg-white.mx-0.form-group.py-2.mb-0.border-bottom
+      .col-2.font-weight-bold.text-danger
+        | ふりがな
+      .col-5
+        lable for="inquiry_sei_kana"
+          | せい
+        = text_field :inquiry, :sei_kana, :class => "form-control", :placeholder => "ふくしん", :maxlength => 20, required: true
+      .col-5
+        lable for="inquiry_mei_kana"
+          | めい
+        = text_field :inquiry, :mei_kana, :class => "form-control", :placeholder => "たろう", :maxlength => 20, required: true
+
+    .row.font-small.bg-white.mx-0.form-group.py-2.mb-0.border-bottom
+      .col-2.font-weight-bold.text-danger
+        | 電話番号
+      .col-10
+        lable for="inquiry_phone"
+          | ※ ハイフン(-)なしでご入力下さい。
+        = telephone_field :inquiry, :phone, :class => "form-control", :placeholder => "090xxxxxxxx", :maxlength => 20, required: true
+
+    .row.font-small.bg-white.mx-0.form-group.py-2.mb-0.border-bottom
+      .col-2.font-weight-bold
+        | Mail
+      .col-10
+        = email_field :inquiry, :email, :class => "form-control", :placeholder => "contact@xxxx.xx.xx", :maxlength => 50
+
+    .row.bg-white.mx-0.form-group.py-2.mb-0.border-bottom
+      .col-2.font-weight-bold.font-small
+        | 性別
+      .col-5.form-check
+        = radio_button_tag 'inquiry[sex]', 'man', false, :class => "form-check-input"
+        label.form-check-label for="inquiry_sex_man"
+          | 男
+      .col-5.form-check
+        = radio_button_tag 'inquiry[sex]', 'woman', false, :class => "form-check-input"
+        label.form-check-label for="inquiry_sex_woman"
+          | 女
+
+    .row.font-small.bg-white.mx-0.form-group.py-2.mb-0.border-bottom
+      .col-2.font-weight-bold
+        | お問合せ内容
+      .col-10.text-left
+        p.mb-1
+          | ※ 複数選択可
+        .form-check.py-1
+          = check_box_tag 'inquiry[visit]', true, false, class: "form-check-input"
+          label.form-check-label for="inquiry_visit"
+            | 見学したい
+        .form-check.py-1
+          = check_box_tag 'inquiry[rental]', true, false, class: "form-check-input"
+          label.form-check-label for="inquiry_rental"
+            | 賃貸について
+        .form-check.py-1
+          = check_box_tag 'inquiry[parking]', true, false, class: "form-check-input"
+          label.form-check-label for="inquiry_parking"
+            | 駐車場について
+        .form-check.py-1
+          = check_box_tag 'inquiry[bargain]', true, false, class: "form-check-input"
+          label.form-check-label for="inquiry_bargain"
+            | 売買について
+        .form-check.py-1
+          = check_box_tag 'inquiry[others]', true, false, class: "form-check-input"
+          label.form-check-label for="inquiry_others"
+            | その他契約について
+
+    .row.font-small.bg-white.mx-0.form-group.py-2.mb-0.border-bottom
+      .col-2.font-weight-bold
+        | 内容
+      .col-10
+        - placeholder = "内覧希望の日時や、質問などをご入力ください。（任意)\n \n第一希望：◯月◯日　◯◯：◯◯〜 \n第二希望：◯月◯日　◯◯：◯◯〜"
+        = text_area_tag 'inquiry[text]', '', :class => "form-control", :placeholder => placeholder, :maxlength => 600, :size => "20x10"
+
+    .row.border-bottom.font-small.bg-white.mx-0.py-2
+      .col.text-left
+        small
+          | ※ ご入力いただいた個人情報は、お客様との資料の送付や電話・電子メール等でのご連絡のためにのみ利用させていただきます。
+          br
+          | ※ 業者配信メールまたは営業関連のお問い合わせはご遠慮ください。
+
+    .row.font-small.bg-white.mx-0.form-group.py-2.mb-0.border-bottom
+      .col
+        button.btn.btn-primary type="submit"
+          | 送信
+
+
