@@ -1,0 +1,31 @@
+ホームページから問い合わせがありました。
+
+＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+■お名前
+姓:  <%= @inquiry.sei %> (<%= @inquiry.sei_kana %>)
+名:  <%= @inquiry.mei %> (<%= @inquiry.mei_kana %>)
+
+■電話番号:  <%= @inquiry.phone %>
+
+■Mail:  <%= @inquiry.email %>
+
+■性別:  <%= @inquiry.sex == "man" ? "男" : "女" %>
+
+■お問合せ内容
+<%= "・見学したい" if @inquiry.visit %>
+<%= "・賃貸について" if @inquiry.rental %>
+<%= "・駐車場について" if @inquiry.parking %>
+<%= "・売買について" if @inquiry.bargain %>
+<%= "・その他契約について" if @inquiry.others %>
+
+
+■内容
+<%= @inquiry.text %>
+
+
+＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+
+
+
+
+

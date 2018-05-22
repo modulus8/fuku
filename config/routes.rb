@@ -8,5 +8,9 @@ Rails.application.routes.draw do
   get 'parking' => 'welcome#parking'
   get 'rikadai' => 'welcome#rikadai'
   get 'download' => 'welcome#download'
+  get 'contact' => 'welcome#contact'
+  post 'send_inquiry' => 'welcome#send_inquiry'
+
+
 
 end
