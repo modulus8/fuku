@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   get 'download' => 'welcome#download'
   get 'contact' => 'welcome#contact'
   post 'send_inquiry' => 'welcome#send_inquiry'
+  get 'send_inquiry' => redirect("/")
 
 
 

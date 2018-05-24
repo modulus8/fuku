@@ -9,7 +9,7 @@
 
 ■Mail:  <%= @inquiry.email %>
 
-■性別:  <%= @inquiry.sex == "man" ? "男" : "女" %>
+■性別:  <%= @inquiry.sex == "man" ? "男" : @inquiry.sex == "woman" ? "女" : "不明"%>
 
 ■お問合せ内容
 <%= "・見学したい" if @inquiry.visit %>
