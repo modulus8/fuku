@@ -59,8 +59,7 @@ a{
 
 .text-main-shadow{text-shadow: 2px 3px 5px #b5a5a5;}
 
-.main-top-pad{padding-top: 85px;}
-.header-height{height: 67px; overflow: scroll;}
+.main-top-pad{padding-top: 90px;}
 
 .click_track_js:active{
   opacity: 0.8;
@@ -168,3 +167,10 @@ em{
   background-position: center;
   background-size: cover;
 }
+
+.ul-block {
+  list-style:none;
+  font-size:0;
+}
+
+.ul-block li{font-size:18px;}
